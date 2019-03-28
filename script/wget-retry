@@ -85,7 +85,7 @@ of downloading (with C<-t>/C<--tries>, e.g. C<-t 0>) and on connection refused
 (with C<--retry-connrefused>) but not on other network failures, e.g. DNS
 resolution failure (which can happen sometimes).
 
-This wrapper runs B<wget> then check its exit code. If exit code indicates
+This wrapper runs B<wget> then checks its exit code. If exit code indicates
 network failure (4) it will re-run wget.
 
 The number of tries is unlimited, or from the C<-t> (<--tries>) option. The
