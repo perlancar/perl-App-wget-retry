@@ -1,6 +1,8 @@
 package App::wget::retry;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 1;

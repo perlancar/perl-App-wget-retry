@@ -1,6 +1,8 @@
 #!perl
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use strict;
@@ -53,7 +55,7 @@ while (1) {
     system {$wget_cmd} $wget_cmd, @ORIG_ARGV;
     last unless $?;
     my $exit_code = $? >> 8;
-    if ($exit_code =~ /\A(4)\z/) {
+    if (grep { $exit_code == $_ } @{ $Opts{exit_statuses} }) {
         $retries++;
         if ($Opts{tries} == 0 || $retries <= $Opts{tries}) {
             warn "wget-retry: $wget_cmd exit-code is $exit_code, retrying ($retries) after $Opts{waitretry} second(s) ...\n";
